@@ -1,0 +1,9 @@
+# Binários gerados na compilação
+*.exe
+*.o
+*.obj
+pse_em_acao
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
