@@ -14,7 +14,8 @@ A proposta consiste em uma aplicação em linguagem C, executada em terminal, pa
 
 - Arthur Volpato Moreira — RA 26004378-2
 - João Vitor de Moraes Gongora — RA 26003960-2
-- Paulo Nicholas Lopes Pereira — RA 26008839-2
+
+> A 1ª entrega foi submetida com três integrantes. Paulo Nicholas Lopes Pereira trancou o curso antes da 2ª entrega, que segue com os dois integrantes acima.
 
 ## Status
 

@@ -112,7 +112,8 @@ int main(void) {
     sis.total = 0;
 
     printf("Bem-vindo(a) ao PSE em Ação!\n");
-    printf("Sistema de planejamento e acompanhamento de ações de saúde na escola.\n");
+    printf("Sistema de planejamento e acompanhamento de ações de saúde "
+           "na escola.\n");
 
     do {
         exibirMenu();
@@ -138,7 +139,8 @@ int main(void) {
                 printf("\nEncerrando o sistema. Até logo!\n");
                 break;
             default:
-                printf("\n[!] Opção inexistente no menu. Escolha um número entre 0 e 5.\n");
+                printf("\n[!] Opção inexistente no menu. "
+                       "Escolha um número entre 0 e 5.\n");
                 break;
         }
 
@@ -166,7 +168,8 @@ static void cadastrarAcao(struct Sistema *sis) {
 
     if (sis->total >= MAX_ACOES) {
         printf("[!] Limite de armazenamento atingido (%d ações).\n", MAX_ACOES);
-        printf("    Exclua registros ou reinicie o sistema para cadastrar novas ações.\n");
+        printf("    Exclua registros ou reinicie o sistema para cadastrar "
+               "novas ações.\n");
         return;
     }
 
@@ -178,20 +181,24 @@ static void cadastrarAcao(struct Sistema *sis) {
         }
 
         if (!codigoValido(nova.codigo)) {
-            printf("  [!] Código inválido. Use apenas letras, números, hífen ou sublinhado.\n\n");
+            printf("  [!] Código inválido. Use apenas letras, números, "
+                   "hífen ou sublinhado.\n\n");
             nova.codigo[0] = '\0';
         } else if (buscarIndicePorCodigo(sis, nova.codigo) != -1) {
-            printf("  [!] Código duplicado: já existe uma ação cadastrada com este código.\n\n");
+            printf("  [!] Código duplicado: já existe uma ação cadastrada "
+                   "com este código.\n\n");
             nova.codigo[0] = '\0';
         }
     } while (nova.codigo[0] == '\0');
 
     lerTexto("Escola: ", nova.escola, TAM_ESCOLA);
-    lerTexto("Tema (ex.: saúde mental, alimentação saudável): ", nova.tema, TAM_TEMA);
+    lerTexto("Tema (ex.: saúde mental, alimentação saudável): ",
+             nova.tema, TAM_TEMA);
     lerData("Data prevista (dd/mm/aaaa): ", nova.dataPrevista);
     lerTexto("Público-alvo: ", nova.publicoAlvo, TAM_PUBLICO);
     lerTexto("Responsável pela ação: ", nova.responsavel, TAM_RESPONSAVEL);
-    nova.quantidadePrevista = lerInteiro("Quantidade prevista de participantes: ", 0, 9999);
+    nova.quantidadePrevista = lerInteiro("Quantidade prevista de participantes: ",
+                                         0, 9999);
 
     printf("\nSituação inicial da ação:\n");
     printf(" 1 - Planejada\n");
@@ -201,14 +208,16 @@ static void cadastrarAcao(struct Sistema *sis) {
 
     nova.quantidadeRealizada = 0;
     if (nova.situacao == REALIZADA) {
-        nova.quantidadeRealizada = lerInteiro("Quantidade efetiva de participantes: ", 0, 9999);
+        nova.quantidadeRealizada = lerInteiro("Quantidade efetiva de participantes: ",
+                                              0, 9999);
     }
 
     indice = sis->total;
     sis->acoes[indice] = nova;
     sis->total++;
 
-    printf("\n[ok] Ação %s cadastrada com sucesso na posição %d.\n", nova.codigo, indice + 1);
+    printf("\n[ok] Ação %s cadastrada com sucesso na posição %d.\n",
+           nova.codigo, indice + 1);
     printf("     Situação: %s | Participantes previstos: %d\n",
            nomeSituacao(nova.situacao), nova.quantidadePrevista);
 }
@@ -269,7 +278,8 @@ static void pesquisarAcao(const struct Sistema *sis) {
         i = buscarIndicePorCodigo(sis, codigo);
 
         if (i == -1) {
-            printf("\n[!] Ação não encontrada: não existe registro com o código %s.\n", codigo);
+            printf("\n[!] Ação não encontrada: não existe registro com o "
+                   "código %s.\n", codigo);
             return;
         }
 
@@ -287,7 +297,8 @@ static void pesquisarAcao(const struct Sistema *sis) {
     printf("\nResultados para \"%s\":\n", termo);
 
     for (i = 0; i < sis->total; i++) {
-        const char *campo = (tipo == 2) ? sis->acoes[i].escola : sis->acoes[i].tema;
+        const char *campo = (tipo == 2) ? sis->acoes[i].escola
+                                        : sis->acoes[i].tema;
 
         if (contemTexto(campo, termo)) {
             exibirAcao(&sis->acoes[i], i + 1);
@@ -323,8 +334,10 @@ static void atualizarSituacao(struct Sistema *sis) {
     indice = buscarIndicePorCodigo(sis, codigo);
 
     if (indice == -1) {
-        printf("\n[!] Ação não encontrada: não existe registro com o código %s.\n", codigo);
-        printf("    Confira o código na opção 2 (listar ações) e tente novamente.\n");
+        printf("\n[!] Ação não encontrada: não existe registro com o "
+               "código %s.\n", codigo);
+        printf("    Confira o código na opção 2 (listar ações) e tente "
+               "novamente.\n");
         return;
     }
 
@@ -425,11 +438,14 @@ static void gerarResumo(const struct Sistema *sis) {
         char textoPercentual[16];
 
         formatarPercentual(textoPercentual, sizeof(textoPercentual), percentual);
-        printf("Percentual de participação das ações realizadas: %s%%\n", textoPercentual);
+        printf("Percentual de participação das ações realizadas: %s%%\n",
+               textoPercentual);
     } else if (realizadas == 0) {
-        printf("Percentual de participação: não há ações realizadas para calcular.\n");
+        printf("Percentual de participação: não há ações realizadas "
+               "para calcular.\n");
     } else {
-        printf("Percentual de participação: não há participantes previstos para calcular.\n");
+        printf("Percentual de participação: não há participantes previstos "
+               "para calcular.\n");
     }
 
     printf("\nSituação do acompanhamento:\n");
@@ -561,7 +577,8 @@ static void lerTexto(const char *rotulo, char *destino, int tamanho) {
         }
 
         if ((int)strlen(linha) >= tamanho) {
-            printf("  [!] Texto muito longo. Use no máximo %d caracteres.\n\n", tamanho - 1);
+            printf("  [!] Texto muito longo. Use no máximo %d caracteres.\n\n",
+                   tamanho - 1);
             continue;
         }
 
@@ -597,7 +614,8 @@ static int lerInteiro(const char *rotulo, int minimo, int maximo) {
         }
 
         if (valor < minimo || valor > maximo) {
-            printf("  [!] Valor fora do intervalo permitido (%d a %d).\n\n", minimo, maximo);
+            printf("  [!] Valor fora do intervalo permitido (%d a %d).\n\n",
+                   minimo, maximo);
             continue;
         }
 
@@ -619,7 +637,8 @@ static void lerData(const char *rotulo, char *destino) {
         }
 
         if (!dataValida(linha)) {
-            printf("  [!] Data inválida. Informe uma data real no formato dd/mm/aaaa.\n\n");
+            printf("  [!] Data inválida. Informe uma data real no formato "
+                   "dd/mm/aaaa.\n\n");
             continue;
         }
 
@@ -690,7 +709,8 @@ static int dataValida(const char *data) {
 
     dia = (data[0] - '0') * 10 + (data[1] - '0');
     mes = (data[3] - '0') * 10 + (data[4] - '0');
-    ano = (data[6] - '0') * 1000 + (data[7] - '0') * 100 + (data[8] - '0') * 10 + (data[9] - '0');
+    ano = (data[6] - '0') * 1000 + (data[7] - '0') * 100
+          + (data[8] - '0') * 10 + (data[9] - '0');
 
     if (mes < 1 || mes > 12) {
         return 0;
