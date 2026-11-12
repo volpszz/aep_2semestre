@@ -7,8 +7,7 @@ Esta pasta reúne os documentos acadêmicos das duas etapas da AEP.
 | Arquivo | Etapa | Conteúdo |
 | --- | --- | --- |
 | `AEP- 2 SEMESTRE PRIMEIRA ENTREGA.pdf` | 1ª entrega | Contextualização, problema de pesquisa, objetivos, justificativa, requisitos, fluxogramas, pseudocódigos, riscos e planejamento das sprints. |
-| `AEP - 2 SEMESTRE SEGUNDA ENTREGA.docx` | 2ª entrega | Requisitos atualizados, diagrama e descrição dos casos de uso, decisões de implementação, registro dos testes, manual do usuário com capturas de tela, considerações finais e links de acesso. |
-| `AEP - 2 SEMESTRE SEGUNDA ENTREGA.pdf` | 2ª entrega | Mesmo conteúdo do arquivo anterior, em PDF, pronto para envio. |
+| `AEP - 2 SEMESTRE SEGUNDA ENTREGA.pdf` | 2ª entrega | Requisitos atualizados, diagrama e descrição dos casos de uso, decisões de implementação, registro dos testes, manual do usuário com capturas de tela, considerações finais e links de acesso. |
 
 ## Documento final (2ª entrega)
 
@@ -24,4 +23,6 @@ O documento está organizado nas seguintes seções:
 8. Considerações finais
 9. Links de acesso (repositório e vídeo)
 
-O diagrama de casos de uso também está disponível isoladamente em `diagramas/casos_de_uso.png`, e o registro dos testes em `testes/casos_de_teste.md`.
+O diagrama de casos de uso também está disponível isoladamente em `diagramas/casos_de_uso.png`, os fluxogramas da 1ª entrega em `fluxogramas/`, e o registro dos testes em `testes/casos_de_teste.md`.
+
+O documento é versionado apenas em PDF, que é o formato entregue. A versão editável em `.docx` é mantida fora do repositório para não haver duas cópias divergentes.

@@ -23,6 +23,7 @@ A proposta consiste em uma aplicação em linguagem C, executada em terminal, pa
 | --- | --- |
 | 1ª entrega — documento escrito (contextualização, requisitos, fluxogramas, sprints) | Concluída |
 | 2ª entrega — implementação, casos de uso, testes, manual e documento final | Concluída |
+| Apresentação em vídeo | Em produção |
 
 ## Funcionalidades implementadas
 
@@ -60,13 +61,15 @@ O programa compila sem erros e sem avisos com as opções `-Wall -Wextra`.
 │   ├── pse_em_acao.c        # código-fonte do sistema
 │   └── README.md            # detalhes técnicos da implementação
 ├── documentacao/
-│   ├── AEP - 2 SEMESTRE PRIMEIRA ENTREGA.pdf
-│   ├── AEP - 2 SEMESTRE SEGUNDA ENTREGA.docx
+│   ├── AEP- 2 SEMESTRE PRIMEIRA ENTREGA.pdf
+│   ├── AEP - 2 SEMESTRE SEGUNDA ENTREGA.pdf
 │   └── README.md
 ├── diagramas/
 │   ├── casos_de_uso.png     # diagrama de casos de uso (UML)
 │   └── README.md
 ├── fluxogramas/
+│   ├── fluxograma-geral.png
+│   ├── fluxograma-cadastro.png
 │   └── README.md
 ├── pseudocodigos/
 │   └── pseudocodigos.md
@@ -81,12 +84,15 @@ O programa compila sem erros e sem avisos com as opções `-Wall -Wextra`.
 - **Descrição dos casos de uso:** seção 4 do documento final, com objetivo, ator, pré-condições, fluxo principal, fluxos alternativos e pós-condições.
 - **Requisitos atualizados:** seção 2 do documento final, com a justificativa de cada alteração.
 - **Testes realizados:** [`testes/casos_de_teste.md`](testes/casos_de_teste.md) — 15 casos de teste executados.
+- **Fluxogramas da 1ª entrega:** [`fluxogramas/`](fluxogramas/) — fluxo geral e detalhado do cadastro de uma ação.
 - **Manual do usuário e capturas de tela:** seção 7 do documento final.
-- **Documento final:** [`documentacao/AEP - 2 SEMESTRE SEGUNDA ENTREGA.docx`](documentacao/AEP%20-%202%20SEMESTRE%20SEGUNDA%20ENTREGA.docx).
+- **Documento final:** [`documentacao/AEP - 2 SEMESTRE SEGUNDA ENTREGA.pdf`](documentacao/AEP%20-%202%20SEMESTRE%20SEGUNDA%20ENTREGA.pdf).
+
+> O documento é versionado em PDF, que é o formato entregue. A versão editável em `.docx` é mantida fora do repositório para não haver duas cópias divergentes do mesmo documento.
 
 ## Apresentação em vídeo
 
-Vídeo de até 7 minutos com a demonstração do sistema em execução e a explicação das decisões de implementação: *link a ser inserido após a gravação.*
+Vídeo de até 7 minutos com a demonstração do sistema em execução e a explicação das decisões de implementação: *link a ser inserido após a publicação.*
 
 ## Observações éticas
 
