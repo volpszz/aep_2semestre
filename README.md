@@ -23,7 +23,7 @@ A proposta consiste em uma aplicação em linguagem C, executada em terminal, pa
 | --- | --- |
 | 1ª entrega — documento escrito (contextualização, requisitos, fluxogramas, sprints) | Concluída |
 | 2ª entrega — implementação, casos de uso, testes, manual e documento final | Concluída |
-| Apresentação em vídeo | Em produção |
+| Apresentação em vídeo | Publicada (6min59) |
 
 ## Funcionalidades implementadas
 
@@ -92,7 +92,11 @@ O programa compila sem erros e sem avisos com as opções `-Wall -Wextra`.
 
 ## Apresentação em vídeo
 
-Vídeo de até 7 minutos com a demonstração do sistema em execução e a explicação das decisões de implementação: *link a ser inserido após a publicação.*
+Vídeo de 6 minutos e 59 segundos com a apresentação do problema, a demonstração do sistema em execução, a explicação das decisões de implementação e a síntese dos resultados:
+
+**https://youtu.be/mEwsyVIhUxM**
+
+Participação dos dois integrantes: Arthur Volpato Moreira (problema, requisitos, fluxogramas, código e resultados) e João Vitor de Moraes Gongora (demonstração do sistema).
 
 ## Observações éticas
 
